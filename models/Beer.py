@@ -26,7 +26,7 @@ class BeerSchema(Schema):
     abv = fields.Float(required=True)
     price = fields.Float(required=True)
     tasting_notes = fields.Str(required=True)
-    user = fields.Nested('UserSchema', exclude=('email', 'sandwiches'))
+    user = fields.Nested('UserSchema', exclude=('email', 'beers'))
 
     @post_load
     def load_brewery(self, data):

@@ -9,4 +9,4 @@ class Style(db.Entity):
 class StyleSchema(Schema):
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True)
-    beers = fields.Nested('BeerSchema', many=True, exclude=('style'))
+    beers = fields.Nested('BeerSchema', many=True, exclude=('style',))

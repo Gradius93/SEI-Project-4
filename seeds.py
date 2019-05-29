@@ -16,16 +16,16 @@ with db_session():
         password_hash=schema.generate_hash('pass')
     )
 
-    cloudwater = Brewery(name='Cloudwater')
-    buxton = Brewery(name='Buxton')
-    northern_monks = Brewery(name='Northern Monks')
-    brewdog = Brewery(name='Brewdog')
-    kernel = Brewery(name='Kernel')
-    london_beer_factory = Brewery(name='London Beer Factory')
-    siren = Brewery(name='Siren')
-    magic_rock = Brewery(name='Magic Rock')
-    north_brewing_co = Brewery(name='North Brewing Co.')
-    wild_beer_co = Brewery(name='Wild Beer Co.')
+    cloudwater = Brewery(name='Cloudwater', founded='2014', area='Manchester', user=seanyg)
+    buxton = Brewery(name='Buxton', founded='2017', area='Buxton', user=seanyg)
+    northern_monks = Brewery(name='Northern Monks', founded='2013', area='Leeds', user=seanyg)
+    brewdog = Brewery(name='Brewdog', founded='2007', area='Ellon', user=seanyg)
+    kernel = Brewery(name='Kernel', founded='2010', area='London', user=seanyg)
+    london_beer_factory = Brewery(name='London Beer Factory', founded='2014', area='London', user=seanyg)
+    siren = Brewery(name='Siren', founded='2013', area='Wokingham', user=seanyg)
+    magic_rock = Brewery(name='Magic Rock', founded='2011', area='Huddersfield', user=seanyg)
+    north_brewing_co = Brewery(name='North Brewing Co.', founded='2015', area='Leeds', user=seanyg)
+    wild_beer_co = Brewery(name='Wild Beer Co.', founded='2012', area='Shepton Mallet', user=seanyg)
 
     pale = Style(name='Pale')
     ipa = Style(name='IPA')
@@ -43,7 +43,7 @@ with db_session():
 
     Beer(
         name='AW-18 DDH Pale v1',
-        brewery=buxton,
+        brewery=cloudwater,
         style=pale,
         hops='There are some but none specified online',
         region='UK',

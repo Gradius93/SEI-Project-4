@@ -43,6 +43,7 @@ with db_session():
 
     Beer(
         name='AW-18 DDH Pale v1',
+        image='https://cdn.shopify.com/s/files/1/0940/3274/products/AW18-Brewed-All-Season-DDH-Pale_1024x1024.jpg?v=1540912092',
         brewery=cloudwater,
         style=pale,
         hops='There are some but none specified online',
@@ -55,6 +56,7 @@ with db_session():
 
     Beer(
         name='Eternal',
+        image='https://cdn.shopify.com/s/files/1/0019/7197/8349/products/b95045113dc180cc69d37d141bddc3166a83d982_1000x1000.jpg?v=1552650063',
         brewery=northern_monks,
         style=ipa,
         hops='There are some but none specified online',
@@ -67,6 +69,7 @@ with db_session():
 
     Beer(
         name='Jet Black Heart',
+        image='https://www.ocado.com/productImages/412/412268011_1_640x640.jpg?identifier=03d76792b5521960fd230d3c969ce3b0',
         brewery=brewdog,
         style=stout,
         hops='Hallertauer Taurus',
@@ -79,6 +82,7 @@ with db_session():
 
     Beer(
         name='India Pale Ale, Vic Secret',
+        image='https://honestbrew.co.uk/wp-content/uploads/2019/02/CMVS.jpg',
         brewery=kernel,
         style=ipa,
         hops='There are some but none specified online',
@@ -91,6 +95,7 @@ with db_session():
 
     Beer(
         name='Hazey Daze',
+        image='https://d3qgkyg87t4mjz.cloudfront.net/media/catalogue/product/modified/LBF_Hazy.png',
         brewery=london_beer_factory,
         style=ipa,
         hops='Citra, Mosaic, Vic Secret',
@@ -103,6 +108,7 @@ with db_session():
 
     Beer(
         name='Calypso G901',
+        image='https://honestbrew.co.uk/wp-content/uploads/2015/11/Siren-Calypsov2.jpg',
         brewery=siren,
         style=sour,
         hops='Cluster, Comet, Simcoe, Mosaic',
@@ -115,6 +121,7 @@ with db_session():
 
     Beer(
         name='Salty Kiss',
+        image='https://honestbrew.co.uk/wp-content/uploads/2018/02/Magic-Rock-Salty-Kiss-Can-330ml.jpg',
         brewery=magic_rock,
         style=sour,
         hops='Cascade',
@@ -127,6 +134,7 @@ with db_session():
 
     Beer(
         name='Full Fathom 5',
+        image='https://honestbrew.co.uk/wp-content/uploads/2018/04/North-Brewing-Co.-Full-Fathom-5-Coffee-Coconut-Porter-6.5_-Can-330ml.jpg',
         brewery=north_brewing_co,
         style=porter,
         hops='There are some but none specified online',
@@ -139,6 +147,7 @@ with db_session():
 
     Beer(
         name='Bibble',
+        image='https://www.beerhawk.co.uk/media/catalog/product/w/i/wild_beer_bibble.png',
         brewery=wild_beer_co,
         style=pale,
         hops='Magnum, Summit, Amarillo, Mosaic',

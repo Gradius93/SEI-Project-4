@@ -7,6 +7,7 @@ from .Style import Style
 
 class Beer(db.Entity):
     name = Required(str)
+    image = Required(str)
     brewery = Required('Brewery')
     style = Required('Style')
     hops = Optional(str)
@@ -19,6 +20,7 @@ class Beer(db.Entity):
 class BeerSchema(Schema):
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True)
+    image = fields.Str(required=True)
     brewery = fields.Nested('BrewerySchema', exclude=('beers', 'user'), dump_only=True)
     brewery_id = fields.Int(load_only=True)
     style = fields.Nested('StyleSchema', exclude=('beers',), dump_only=True)

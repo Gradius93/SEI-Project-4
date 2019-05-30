@@ -21,7 +21,7 @@ class Navbar extends React.Component {
             </a>
 
             <a className="navbar-item">
-              Documentation
+              Beer index
             </a>
 
             <div className="navbar-item has-dropdown is-hoverable">

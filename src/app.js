@@ -5,6 +5,8 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 
+import BeerIndex from './components/beer/Index'
+
 import 'bulma'
 
 class App extends React.Component {
@@ -13,7 +15,10 @@ class App extends React.Component {
       <Router>
         <div>
           <Navbar />
-          <Route path="/" component={Home} />
+          <Switch>
+            <Route path="/beers" component={BeerIndex} />
+            <Route path="/" component={Home} />
+          </Switch>
         </div>
       </Router>
     )

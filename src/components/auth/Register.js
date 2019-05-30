@@ -15,17 +15,18 @@ class Register extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(e) {
-    const data = { ...this.state.data, [e.target.name]: e.target.value }
-    this.setState({ data })
+  handleChange({target: { name, value }}) {
+    const data = { ...this.state.data, [name]: value }
+    const errors = { ...this.state.errors, [name]: '' }
+    this.setState({ data, errors })
   }
 
   handleSubmit(e) {
     e.preventDefault()
-
+    console.log(this.state.data)
     axios.post('/api/register', this.state.data)
       .then(() => this.props.history.push('/login'))
-      .catch(err => this.setState({ errors: err.response.data.errors }))
+      .catch(err => this.setState({ errors: err.response.data.error }))
   }
 
   render() {
@@ -76,15 +77,15 @@ class Register extends React.Component {
                     <div className="control">
                       <input
                         className="input"
-                        name="passwordConfirmation"
+                        name="password_confirmation"
                         type="password"
                         placeholder="eg: ••••••••"
                         onChange={this.handleChange}
                       />
                     </div>
-                    {this.state.errors.passwordConfirmation && <div className="help is-danger">{this.state.errors.passwordConfirmation}</div>}
+                    {this.state.errors.password_confirmation && <div className="help is-danger">{this.state.errors.passwordConfirmation}</div>}
                   </div>
-                  {this.state.errors.passwordConfirmation && <div className="help is-danger">{this.state.errors.passwordConfirmation}</div>}
+                  {this.state.errors.password_confirmation && <div className="help is-danger">{this.state.errors.passwordConfirmation}</div>}
                 </div>
                 <button className="button is-dark">Submit</button>
               </form>

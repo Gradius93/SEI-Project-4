@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 
 class Navbar extends React.Component {
@@ -8,6 +8,15 @@ class Navbar extends React.Component {
     this.state = {
       active: false
     }
+    this.logout = this.logout.bind(this)
+    this.toggleActive = this.toggleActive.bind(this)
+  }
+  logout(){
+    Auth.removeToken()
+    this.props.history.push('/')
+  }
+  toggleActive(){
+    this.setState({ active: !this.state.active})
   }
   render() {
     return (
@@ -45,4 +54,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar
+export default withRouter(Navbar)

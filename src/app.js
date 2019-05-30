@@ -6,6 +6,9 @@ import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
 
 import BeerIndex from './components/beer/Index'
+import BeerShow from './components/beer/Show'
+
+import BreweryIndex from './components/brewery/Index'
 
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
@@ -13,15 +16,17 @@ import Register from './components/auth/Register'
 import 'bulma'
 
 class App extends React.Component {
-  render(){
+  render() {
     return(
       <Router>
         <div>
           <Navbar />
           <Switch>
+            <Route path="/breweries" component={BreweryIndex} />
+            <Route path="/beers/:id" component={BeerShow} />
+            <Route path="/beers" component={BeerIndex} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/beers" component={BeerIndex} />
             <Route path="/" component={Home} />
           </Switch>
         </div>

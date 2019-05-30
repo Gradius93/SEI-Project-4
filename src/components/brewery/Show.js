@@ -6,19 +6,18 @@ class Show extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      beer: null,
       brewery: null
     }
   }
 
   componentDidMount() {
-    axios.get(`/api/beers/${this.props.match.params.id}`)
-      .then(res => this.setState({ beer: res.data }))
+    axios.get(`/api/breweries/${this.props.match.params.id}`)
+      .then(res => this.setState({ brewery: res.data }))
   }
 
 
   render() {
-    if(!this.state.beer) return null
+    if(!this.state.brewery) return null
     return(
       <section className="section">
         <div className="container">
@@ -26,7 +25,7 @@ class Show extends React.Component {
 
           <div className="level">
             <div className="level-left">
-              <h1 className="title is-1">{this.state.beer.name}</h1>
+              <h1 className="title is-1">{this.state.brewery.name}</h1>
             </div>
 
           </div>
@@ -36,19 +35,16 @@ class Show extends React.Component {
 
 
               <figure className="image">
-                <img src={this.state.beer.image} alt={this.state.beer.name} />
+                <img src={this.state.brewery.image} alt={this.state.brewery.name} />
               </figure>
             </div>
 
             <div className="column is-half-desktop is-full-tablet">
-              <div className="level-left">
-                <h1 className="title is-1">{this.state.beer.name}</h1>
-              </div>
-              <h2 className="title is-2">{this.state.beer.region}</h2>
+              <h2 className="title is-2">{this.state.brewery.area}</h2>
 
               <hr />
 
-              <p>{this.state.beer.tasting_notes}</p>
+              <h2 className="title is-2">{this.state.brewery.founded}</h2>
 
 
             </div>

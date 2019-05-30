@@ -1,63 +1,41 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Navbar extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      active: false
+    }
+  }
   render() {
     return (
       <nav className="navbar is-fixed-top">
         <div className="navbar-brand">
-          <h1 className="subtitle is-4">Logo</h1>
+          <Link to="/" className="navbarItem">Home/Logo</Link>
 
-          <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" className={`navbar-burger${this.state.active ? ' is-active' : ''}`}
+            onClick={this.toggleActive}>
+
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
+        <div>
 
-        <div id="navbarBasicExample" className="navbar-menu">
+        </div>
+
+        <div className={`navbar-menu${this.state.active ? ' is-active' : ''}`}>
+
           <div className="navbar-start">
-            <a className="navbar-item">
-              Home
-            </a>
+            <Link to="/beers" className="navbar-item">Beers</Link>
 
-            <a className="navbar-item">
-              Beer index
-            </a>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                More
-              </a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">
-                  About
-                </a>
-                <a className="navbar-item">
-                  Jobs
-                </a>
-                <a className="navbar-item">
-                  Contact
-                </a>
-                <hr className="navbar-divider"/>
-                <a className="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
           </div>
 
           <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
+            <Link to="/register" className="navbar-item">Register</Link>
+            <Link to="/login" className="navbar-item">Login</Link>
           </div>
         </div>
       </nav>

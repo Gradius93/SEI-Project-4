@@ -13,7 +13,7 @@ const Card = ({ image, name, abv, price }) => {
       </div>
       <div className="card-content">
         <div className="content">
-          <p>{abv}%</p>
+          <p>{abv} %</p>
           <p>£{price}</p>
         </div>
       </div>

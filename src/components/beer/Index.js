@@ -24,7 +24,7 @@ class Index extends React.Component {
         <div className="container">
           <div className="columns is-multiline">
             {this.state.beers.map(beer =>
-              <div key={beer._id} className="column is-one-quarter-desktop is-one-third-tablet">
+              <div key={beer._id} className="column is-one-fifth-desktop is-one-third-tablet">
                 <Link to={`/beers/${beer._id}`}>
                   <Card {...beer} />
                 </Link>

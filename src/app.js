@@ -7,6 +7,9 @@ import Navbar from './components/common/Navbar'
 
 import BeerIndex from './components/beer/Index'
 
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+
 import 'bulma'
 
 class App extends React.Component {
@@ -16,6 +19,8 @@ class App extends React.Component {
         <div>
           <Navbar />
           <Switch>
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/beers" component={BeerIndex} />
             <Route path="/" component={Home} />
           </Switch>

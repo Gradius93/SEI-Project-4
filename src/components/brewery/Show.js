@@ -40,11 +40,11 @@ class Show extends React.Component {
             </div>
 
             <div className="column is-half-desktop is-full-tablet">
-              <h2 className="title is-2">{this.state.brewery.area}</h2>
+              <h2 className="title is-2">{this.state.brewery.area} - est. {this.state.brewery.founded}</h2>
 
               <hr />
 
-              <h2 className="title is-2">{this.state.brewery.founded}</h2>
+              <p> info about brewery </p>
 
 
             </div>

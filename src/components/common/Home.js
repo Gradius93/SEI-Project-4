@@ -8,6 +8,7 @@ class Home extends React.Component {
           <div className="container">
             <h1 className="title is-1">Crafty Boozer</h1>
           </div>
+          
         </div>
       </section>
     )

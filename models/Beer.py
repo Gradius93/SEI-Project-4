@@ -1,5 +1,5 @@
 from app import db
-from pony.orm import Required, Optional
+from pony.orm import Required, Optional, Set
 from marshmallow import Schema, fields, post_load
 
 from .Brewery import Brewery
@@ -12,10 +12,12 @@ class Beer(db.Entity):
     style = Required('Style')
     hops = Optional(str)
     region = Required(str)
+    editors_choice = Required(bool, default=False)
     abv = Required(float)
     price = Required(float)
     tasting_notes = Required(str)
     user = Required('User')
+    shopping_added = Set('User', reverse='shopping_list')
 
 class BeerSchema(Schema):
     id = fields.Int(dump_only=True)
@@ -27,10 +29,12 @@ class BeerSchema(Schema):
     style_id = fields.Int(load_only=True)
     hops = fields.Str()
     region = fields.Str(required=True)
+    editors_choice = fields.Bool()
     abv = fields.Float(required=True)
     price = fields.Float(required=True)
     tasting_notes = fields.Str(required=True)
     user = fields.Nested('UserSchema', exclude=('email', 'beers', 'breweries'))
+    shopping_added = fields.Nested('BeerSchema', many=True, exclude=('user',))
 
     @post_load
     def load_brewery(self, data):

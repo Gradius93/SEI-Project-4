@@ -21,7 +21,7 @@ class Index extends React.Component {
     if(!this.state.breweries) return null
     return (
       <section className="section">
-        <div className="container">
+        <div className="container pad">
           <div className="columns is-multiline">
             {this.state.breweries.map(brewery =>
               <div key={brewery.id} className="column is-one-fifth-desktop is-one-third-tablet">

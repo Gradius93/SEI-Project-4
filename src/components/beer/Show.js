@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Promise from 'bluebird'
 
 
 class Show extends React.Component {
@@ -11,9 +12,14 @@ class Show extends React.Component {
     }
   }
 
+  getData() {
+    Promise.props({
+      beer: axios.get(`/api/beers/${this.props.match.params.id}`).then(res => this.setState({ beer: res.data })),
+      brewery: axios.get(`/api/breweries/${this.props.match.params.id}`).then(res => this.setState({ brewery: res.data }))
+    })
+  }
   componentDidMount() {
-    axios.get(`/api/beers/${this.props.match.params.id}`)
-      .then(res => this.setState({ beer: res.data }))
+    this.getData()
   }
 
 
@@ -21,15 +27,10 @@ class Show extends React.Component {
     if(!this.state.beer) return null
     return(
       <section className="section">
-        <div className="container">
+        <div className="container pad">
 
 
-          <div className="level">
-            <div className="level-left">
-              <h1 className="title is-1">{this.state.beer.name}</h1>
-            </div>
 
-          </div>
 
           <div className="columns is-multiline">
             <div className="column is-half-desktop is-full-tablet">
@@ -40,16 +41,21 @@ class Show extends React.Component {
               </figure>
             </div>
 
-            <div className="column is-half-desktop is-full-tablet">
+            <div className="column info is-half-desktop is-full-tablet">
               <div className="level-left">
-                <h1 className="title is-1">{this.state.beer.name}</h1>
+                <h1 className="title is-1 level-right">{this.state.beer.name}</h1>
               </div>
-              <h2 className="title is-2">{this.state.beer.region}</h2>
-
+              <div className="level-left">
+                <h3 className="subtitle is-3">{this.state.beer.brewery.name}
+                </h3>
+                <hr />
+              </div>
+              <div className="level-left">
+                <h3 className="subtitle is-3">{this.state.beer.region}  •  {this.state.beer.abv}%  •  £{this.state.beer.price}</h3>
+              </div>
               <hr />
 
               <p>{this.state.beer.tasting_notes}</p>
-
 
             </div>
           </div>

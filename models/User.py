@@ -10,8 +10,9 @@ class User(db.Entity):
     username = Required(str, unique=True)
     email = Required(str, unique=True)
     password_hash = Required(str)
-    beers = Set('Beer')
+    beers = Set('Beer', reverse='user')
     breweries = Set('Brewery')
+    shopping_list = Set('Beer', reverse='shopping_added')
 
     def is_password_valid(self, plaintext):
         return bcrypt.checkpw(plaintext.encode('utf8'), self.password_hash.encode('utf8'))
@@ -39,6 +40,7 @@ class UserSchema(Schema):
     password_confirmation = fields.Str(load_only=True)
     beers = fields.Nested('BeerSchema', many=True, exclude=('user',))
     breweries = fields.Nested('BrewerySchema', many=True, exclude=('user',))
+    shopping_list = fields.Nested('BeerSchema', many=True, exclude=('user',))
 
     def generate_hash(self, plaintext):
         return bcrypt.hashpw(plaintext.encode('utf8'), bcrypt.gensalt(8)).decode('utf8')

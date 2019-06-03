@@ -22,7 +22,6 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar is-fixed-top">
         <div className="navbar-brand">
-          <Link to="/" className="navbarItem">Home/Logo</Link>
 
           <a role="button" className={`navbar-burger${this.state.active ? ' is-active' : ''}`}
             onClick={this.toggleActive}>
@@ -39,12 +38,15 @@ class Navbar extends React.Component {
         <div className={`navbar-menu${this.state.active ? ' is-active' : ''}`}>
 
           <div className="navbar-start">
+            <Link to="/" className="navbar-item">Home</Link>
             <Link to="/beers" className="navbar-item">Beers</Link>
             <Link to="/breweries" className="navbar-item">Breweries</Link>
             <Link to="/styles" className="navbar-item">Styles</Link>
+            {Auth.isAuthenticated() && <Link to="/beers/new" className="navbar-item">Add a Beer</Link>}
           </div>
 
           <div className="navbar-end">
+            {Auth.isAuthenticated() && <Link to="/" className= "navbar-item" >Shopping List</Link>}
             {!Auth.isAuthenticated() &&<Link to="/register" className="navbar-item">Register</Link>}
             {!Auth.isAuthenticated() &&<Link to="/login" className="navbar-item">Login</Link>}
             {Auth.isAuthenticated() && <a className= "navbar-item" onClick={this.logout}>Logout</a>}

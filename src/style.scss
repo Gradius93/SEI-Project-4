@@ -1,0 +1,55 @@
+.brew {
+  position: relative;
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+.brew-text {
+  position: absolute;
+  top: 75px;
+  left: 400;
+  width: 100%;
+  color: white;
+}
+
+.section {
+  background-image: url('https://static.vinepair.com/wp-content/uploads/2019/01/barrels_social.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+.hero {
+  background-image: url('https://learn.kegerator.com/wp-content/uploads/2014/04/beer-faucets.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.label {
+  color: white;
+}
+
+.beerstyle {
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.brewsec {
+  color: white;
+}
+
+.info {
+  background-color: rgba(255,255,255, 0.7);
+  color: black;
+}
+
+.pad {
+  padding-top: 20px;
+}

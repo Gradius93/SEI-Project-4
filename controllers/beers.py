@@ -72,3 +72,14 @@ def delete(beer_id):
     db.commit()
 
     return '', 204
+
+@router.route('/beers/<int:beer_id>/list', methods=['POST'])
+@db_session
+@secure_route
+def star_pool(beer_id):
+    schema = PoolSchema()
+    beer = Beer.get(id=beer_id)
+    beer.shopping_added.add(g.current_user)
+    db.commit()
+
+    return schema.dumps(beer)

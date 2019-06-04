@@ -59,7 +59,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
 
 }
 
@@ -92,8 +92,12 @@
   .navbar-item {
     color: white;
   }
+
 }
 
+.navbar-menu {
+  background-color: brown;
+}
 img {
   border: 2px solid rgba(255,255,255, 0);
   border-radius: 25px;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ name, founded, area, logo }) => {
+const Card = ({ name, logo }) => {
   return (
     <div className="card">
       <div className="card-header">
@@ -11,11 +11,7 @@ const Card = ({ name, founded, area, logo }) => {
           <img src={logo} alt={name} />
         </figure>
       </div>
-      <div className="card-content">
-        <div className="content">
-          <p>{area} - {founded}</p>
-        </div>
-      </div>
+
     </div>
   )
 }

@@ -28,7 +28,7 @@ class Show extends React.Component {
             <div className="level-left">
             </div>
             <div className="level">
-              <div className="info">
+              <div className="info pad pad2">
                 <p>{this.state.style.info}</p>
               </div>
             </div>

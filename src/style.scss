@@ -4,6 +4,39 @@
   filter: grayscale(100%);
 }
 
+.brew2 {
+  position: relative;
+  width: 100%;
+  transition: filter 0.5s ease;
+
+  .brew-text2 {
+    position: absolute;
+    top: 1px;
+    left: 400;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+  }
+
+  // Hover for image
+  &:hover {
+    filter: grayscale(100%);
+
+    // Set opacity of text to 1 on image hover
+    .brew-text2 {
+      opacity: 1;
+      text-shadow: white 1px 0 10px;
+      font-size: 25px;
+      filter: grayscale(0%);
+      color: blue;
+
+
+    }
+  }
+
+}
+
 .brew-text {
   position: absolute;
   top: 75px;
@@ -26,6 +59,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
 
 }
 
@@ -37,7 +71,7 @@
   font-size: 40px;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -48,8 +82,46 @@
 .info {
   background-color: rgba(255,255,255, 0.7);
   color: black;
+  border: 2px solid rgba(255,255,255, 0.7);
+  border-radius: 25px;
 }
 
+.navbar {
+  background-color: brown;
+
+  .navbar-item {
+    color: white;
+  }
+}
+
+img {
+  border: 2px solid rgba(255,255,255, 0);
+  border-radius: 25px;
+}
+.card {
+  border: 2px solid rgba(255,255,255, 0);
+  border-radius: 25px;
+}
 .pad {
   padding-top: 20px;
+}
+
+.pad2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.home1 {
+  color: black;
+  text-shadow: white 1px 0 100px;
+  font-size: 80px;
+
+}
+
+.home2 {
+  color: black;
+  text-shadow: white 1px 0 100px;
+  font-size: 40px;
+
 }

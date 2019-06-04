@@ -35,11 +35,3 @@ def login():
         'message': f'Welcome back {user.username}',
         'token': user.generate_token()
     })
-
-@router.route('/users', methods=['GET'])
-@db_session
-@secure_route
-def index():
-    schema = UserSchema(many=True)
-    users = User.select()
-    return schema.dumps(users)

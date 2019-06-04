@@ -21,7 +21,7 @@ class Show extends React.Component {
     if(!this.state.brewery) return null
     return(
       <section className="section">
-        <div className="container padw">
+        <div className="container pad">
 
 
           <div className="level">

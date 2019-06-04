@@ -6,7 +6,6 @@ import SecureRoute from './components/common/SecureRoute'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
-import ShopList from './components/common/ShopList'
 
 import BeerIndex from './components/beer/Index'
 import BeerShow from './components/beer/Show'
@@ -32,8 +31,6 @@ class App extends React.Component {
         <div>
           <Navbar />
           <Switch>
-            <SecureRoute path="/users/list" component={ShopList} />
-
             <Route path="/styles/:id" component={StyleShow} />
             <Route path="/styles" component={StyleIndex} />
 

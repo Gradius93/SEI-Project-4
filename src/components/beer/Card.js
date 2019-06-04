@@ -1,25 +1,16 @@
 import React from 'react'
 
-const Card = ({ image, name, abv, price }) => {
+const Card = ({ image, name }) => {
   return (
     <div className="card">
       <div className="card-image">
-        <figure className="image">
+        <figure className="image brew2 hover1">
           <img src={image} alt={name} />
+          <div className="card-content brew-text2">
+            <h3 className="card-header-title">{name}</h3>
+
+          </div>
         </figure>
-      </div>
-      <div className="card-header">
-        <h3 className="card-header-title">{name}</h3>
-      </div>
-      <div className="card-content">
-        <div className="content level">
-          <div className="level-right">
-            <p>{abv}%</p>
-          </div>
-          <div className="level-right">
-            <p className="level-left">£{price}</p>
-          </div>
-        </div>
       </div>
     </div>
   )

@@ -22,6 +22,9 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar is-fixed-top">
         <div className="navbar-brand">
+          <Link to="/" >
+            <img className="logo" src="https://imgur.com/b5RFBJ7.png"/>
+          </Link>
 
           <a role="button" className={`navbar-burger${this.state.active ? ' is-active' : ''}`}
             onClick={this.toggleActive}>
@@ -46,7 +49,7 @@ class Navbar extends React.Component {
           </div>
 
           <div className="navbar-end">
-            
+
             {!Auth.isAuthenticated() &&<Link to="/register" className="navbar-item">Register</Link>}
             {!Auth.isAuthenticated() &&<Link to="/login" className="navbar-item">Login</Link>}
             {Auth.isAuthenticated() && <a className= "navbar-item" onClick={this.logout}>Logout</a>}

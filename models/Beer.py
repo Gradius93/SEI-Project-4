@@ -16,6 +16,7 @@ class Beer(db.Entity):
     price = Required(float)
     tasting_notes = Required(str)
     user = Required('User')
+    # where i added the shop added by when i was trying to get it to work
 
 class BeerSchema(Schema):
     id = fields.Int(dump_only=True)

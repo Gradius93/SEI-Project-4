@@ -7,6 +7,8 @@ from lib.secure_route import secure_route
 
 router = Blueprint('auth', __name__)
 
+# ==================== user registeration =======
+
 @router.route('/register', methods=['POST'])
 @db_session
 def register():
@@ -23,6 +25,8 @@ def register():
         'token': user.generate_token()
     })
 
+# ============ user login ============
+
 @router.route('/login', methods=['POST'])
 @db_session
 def login():
@@ -32,6 +36,7 @@ def login():
         return jsonify({'message': 'Unauthorized'}), 401
 
     return jsonify({
+    # ==== wtf i have no idea why this is broken
         'message': f'Welcome back {user.username}',
         'token': user.generate_token()
     })

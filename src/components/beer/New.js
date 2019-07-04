@@ -16,7 +16,7 @@ class New extends React.Component {
       style: [],
       brewery: []
     }
-
+    {/* a jsx comment */}
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleBrewerySelect = this.handleBrewerySelect.bind(this)

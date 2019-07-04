@@ -12,6 +12,7 @@ class User(db.Entity):
     password_hash = Required(str)
     beers = Set('Beer', reverse='user')
     breweries = Set('Brewery')
+    # shopping list went here ===
 
     def is_password_valid(self, plaintext):
         return bcrypt.checkpw(plaintext.encode('utf8'), self.password_hash.encode('utf8'))
